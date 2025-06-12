@@ -9,8 +9,11 @@ import { useLanguage } from './hooks/useLanguage';
 function App() {
   const { t } = useLanguage();
 
+  // Get the base path from the current location for GitHub Pages compatibility
+  const basename = import.meta.env.DEV ? '/' : '/two-brothers';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="min-h-screen bg-white">
         <Navigation />
         <main>
